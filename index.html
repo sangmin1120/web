@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+      <title>WEB1</title>
+      <meta charset="utf-8">
+      <script>
+        var Body={
+          setcolor: function(color){
+            document.querySelector('body').style.color=color;
+          },
+          setbackgroundcolor: function(color){
+            document.querySelector('body').style.backgroundColor=color;
+          }
+        }
+        var links={
+          setcolor: function(color){
+            var alist=document.querySelectorAll('a');
+            var i=0;
+            while(i<alist.length){
+              alist[i].style.color=color;
+              i=i+1;
+            }
+          }
+        }
+        function nightdayhandle(self){
+          var target=document.querySelector('body');
+          if(self.value=='night'){
+            Body.setbackgroundcolor('black');
+            Body.setcolor('white');
+            self.value='day';
+
+            links.setcolor('powderblue');
+        }
+
+        else{
+          Body.setbackgroundcolor('white');
+          Body.setcolor('black');
+          self.value='night';
+
+          links.setcolor('blue');
+        }
+        document.querySelector('.tog').value=self.value
+        }
+      </script>
+    </head>
+    <body>
+      <h1><a href="myprojects.html">My Site</a></h1>
+
+      <input class="tog" type="button" value="night" onclick="nightdayhandle(this);">
+
+      <h1><a href="index.html" id="active">WEB</a></h1>
+
+      <div id="grid">
+        <ol class="list">
+          <li><a href="1.html" class="saw">HTML</a></li>
+          <li><a href="2.html" class="saw">CSS</a></li>
+          <li><a href="3.html" class="saw">JavaScript</a></li>
+        </ol>
+
+        <div>
+          <h2>web이란 무엇인가?</h2>
+          <p style="font-size:30px">'인터넷'의 동의어로 여기는 사람들이 많지만,
+            인터넷은 TCP/IP 프로토콜로 구현된 통신망이고,
+            월드 와이드 웹은 이 인터넷을 기반으로 대량의 이미지와 문자를 전송하는 프로토콜이다.</p>
+            <img width="60%" src="web.png">
+        </div>
+      </div>
+
+      <input class="tog" type="button" value="night" onclick="nightdayhandle(this);">
+    </body>
+    <link rel="stylesheet" href="indexstyle.css">
+</html>
